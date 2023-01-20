@@ -66,7 +66,7 @@ Once the library is initialized, you can import and use the various functions an
 
 ```go
 import (
-   apyhub "github.com/apyhub/apyhub.go/data"
+   "github.com/apyhub/apyhub.go/data"
 )
 
  country,err:=data.Country("countrycode")

@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func FuzzySearch(source string, target string, unicodeNormalize bool) (data []string, err error) {

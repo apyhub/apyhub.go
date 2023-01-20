@@ -1,7 +1,7 @@
 package validation
 
 import (
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 const (

@@ -3,7 +3,7 @@ package data
 import (
 	"encoding/json"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func prepareAPI(url string, respJsn interface{}) error {

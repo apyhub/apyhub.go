@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func CurrencyConv(currency h.CurrencyConverter) (data float64, err error) {

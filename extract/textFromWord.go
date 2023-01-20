@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"io"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func TextFromWord(urlorFile interface{}) (data string, err error) {

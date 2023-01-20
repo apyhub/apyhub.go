@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 // Convert Csv to Excel

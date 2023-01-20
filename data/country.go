@@ -3,7 +3,7 @@ package data
 import (
 	"fmt"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func Country(countrycode string) (data h.Country, err error) {

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func prepareAPI(obj interface{}, method string, url string, IsURl bool) (byt []byte, err error) {

@@ -3,7 +3,7 @@ package convert
 import (
 	"encoding/json"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func prepareAPI(obj interface{}, url string, IsUrl bool) (string, error) {

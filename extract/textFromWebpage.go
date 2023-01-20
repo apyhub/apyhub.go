@@ -3,7 +3,7 @@ package extract
 import (
 	"encoding/json"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func TextFromWebpage(url string) (data string, err error) {

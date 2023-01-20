@@ -3,7 +3,7 @@ package validation
 import (
 	"encoding/json"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 type Response struct {

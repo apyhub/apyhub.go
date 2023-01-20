@@ -1,7 +1,7 @@
 package generate
 
 import (
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func BarChartAsFile(chart h.Chart) ([]byte, error) {

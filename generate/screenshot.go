@@ -3,7 +3,7 @@ package generate
 import (
 	"fmt"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func ScreenshotWebpageAsFile(url string, quality int, delay int) ([]byte, error) {

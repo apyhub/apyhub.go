@@ -3,7 +3,7 @@ package generate
 import (
 	"fmt"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func WebpageToPdfFile(url string, margin float64) ([]byte, error) {

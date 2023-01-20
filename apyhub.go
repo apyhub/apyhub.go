@@ -1,14 +1,14 @@
 package apyhub
 
 import (
-	"github.com/apyhub/apyhub/convert"
-	"github.com/apyhub/apyhub/data"
-	"github.com/apyhub/apyhub/extract"
-	"github.com/apyhub/apyhub/generate"
-	h "github.com/apyhub/apyhub/helper"
-	"github.com/apyhub/apyhub/imageprocessor"
-	"github.com/apyhub/apyhub/search"
-	"github.com/apyhub/apyhub/validation"
+	"github.com/apyhub/apyhub.go/convert"
+	"github.com/apyhub/apyhub.go/data"
+	"github.com/apyhub/apyhub.go/extract"
+	"github.com/apyhub/apyhub.go/generate"
+	h "github.com/apyhub/apyhub.go/helper"
+	"github.com/apyhub/apyhub.go/imageprocessor"
+	"github.com/apyhub/apyhub.go/search"
+	"github.com/apyhub/apyhub.go/validation"
 )
 
 // Set the token

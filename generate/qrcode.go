@@ -1,7 +1,7 @@
 package generate
 
 import (
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func QrcodeAsFile(content string) (byt []byte, err error) {

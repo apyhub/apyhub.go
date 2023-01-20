@@ -7,7 +7,7 @@ import (
 	"io"
 	"mime/multipart"
 
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 // Image Crop

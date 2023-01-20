@@ -1,7 +1,7 @@
 package data
 
 import (
-	h "github.com/apyhub/apyhub/helper"
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func CurrencyList() (data []h.Currency, err error) {

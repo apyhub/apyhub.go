@@ -1,4 +1,4 @@
-module github.com/apyhub/apyhub
+module github.com/apyhub/apyhub.go
 
 go 1.19
 

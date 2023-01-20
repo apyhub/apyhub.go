@@ -2,7 +2,7 @@
   <img src="https://apyhub.com/logo.svg" alt="Alt text" width="256px" height="256px">
 
 # ApyHub for Golang
----
+
 [![Reference](https://img.shields.io/badge/api-reference-blue.svg)](https://apyhub.com/)
 [![Chat](https://camo.githubusercontent.com/75ee4c902e099cde950b194d37afca7ba236cc0892cf7db0804b85a46e9c4bc6/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f393938393639313139363537343237303234)](https://discord.com/invite/JZagJJcw6F)
 

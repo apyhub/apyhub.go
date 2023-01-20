@@ -72,8 +72,6 @@ import (
  country,err:=data.Country("countrycode")
 ```
 
-For more examples, see the **[API documentation](https://github.com/apyhub/apyhub.go/tree/main/src#README.md)**.
-
 ## **Contributing**
 
 We welcome contributions to this project. If you have an idea for a new feature or improvement, please open an issue to discuss it. If you'd like to contribute code, please follow these steps:

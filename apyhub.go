@@ -249,3 +249,11 @@ func WatermarkImageAsFile(conv h.Watermark, width int, height int) ([]byte, erro
 func WatermarkImageAsURL(conv h.Watermark, width int, height int) (string, error) {
 	return imageprocessor.WatermarkImageAsURL(conv, width, height)
 }
+
+func ThumnailsImageAsFile(conv interface{}, width int, height int) ([]byte, error) {
+	return generate.ThumnailsImageAsFile(conv, width, height)
+}
+
+func ThumnailsImageAsURL(conv interface{}, width int, height int) (string, error) {
+	return generate.ThumnailsImageAsURL(conv, width, height)
+}

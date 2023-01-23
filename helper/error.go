@@ -9,10 +9,10 @@ import (
 
 var (
 	ErrTypeNotMatch        = errors.New("type not matched")
-	ErrResponse            = errors.New("unable to get the server")
 	ErrInvalidFormat       = errors.New("format of file submitted is invalid")
 	ErrNotSameType         = errors.New("image and watermark is not same type")
 	ErrUnableToGetCurrency = errors.New("unable to get currency")
+	ErrTokenNotSet         = errors.New("Authentication required")
 )
 
 func errMessage(body io.ReadCloser) ([]byte, error) {

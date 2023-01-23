@@ -1,4 +1,4 @@
-[apyhub](../README.md) / [Exports](../modules.md) / convert
+[apyhub](../README.md) / convert
 
 # Namespace: convert
 
@@ -17,8 +17,6 @@
 ## Functions
 
 ### csvToExcel
-
-▸ **csvToExcel**
 
 Converts a CSV file or URL to an Excel file.
 
@@ -90,7 +88,6 @@ https://apyhub.com/utility/converter-csv-excel
 ___
 ### htmlToPdf
 
-▸ **htmlToPdf**
 
 Converts an HTML file or URL to a PDF file.
 
@@ -162,7 +159,6 @@ https://apyhub.com/utility/converter-html-pdf
 ___
 ### imageToPdf
 
-▸ **imageToPdf**
 
 Converts a image file or URL to an pdf file.
 
@@ -235,7 +231,6 @@ ___
 
 ### markdownToHtml
 
-▸ **markdownToHtml**
 
 Convert markdown to HTML.
 
@@ -311,7 +306,6 @@ ___
 
 ### presentationToPdf
 
-▸ **presentationToPdf**
 
 Convert a presentation to PDF.
 
@@ -387,7 +381,6 @@ ___
 
 ### spreadsheetToPdf
 
-▸ **spreadsheetToPdf**
 
 Converts a spreadsheet file or URL to an pdf file.
 
@@ -460,7 +453,6 @@ ___
 
 ### csvToExcel
 
-▸ **csvToExcel**
 
 Converts a CSV file or URL to an Excel file.
 
@@ -532,7 +524,6 @@ https://apyhub.com/utility/converter-csv-excel
 ___
 ### wordToPdf
 
-▸ **wordToPdf**
 
 Converts a Word file or URL to a PDF file.
 

@@ -34,6 +34,9 @@ func CallApyhub(method string, url string, body io.Reader, s ...string) ([]byte,
 		return nil, err
 	}
 
+	if Token == "" {
+		return nil, ErrTokenNotSet
+	}
 	// Add the Token
 	req.Header.Add("apy-token", Token)
 	if len(s) == 0 {
@@ -50,11 +53,9 @@ func CallApyhub(method string, url string, body io.Reader, s ...string) ([]byte,
 	if resp.StatusCode != 200 {
 		if resp.StatusCode == 500 {
 			return errMessage(resp.Body)
-		}
-		if resp.StatusCode == 400 {
+		} else {
 			return wrongMessage(resp.Body)
 		}
-		return nil, ErrResponse
 	}
 
 	byt, err := io.ReadAll(resp.Body)

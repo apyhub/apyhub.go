@@ -6,7 +6,7 @@
 
 ### Functions
 
-- [countries](data.md#countries)
+- [countries](data.md#countryList)
 - [country](data.md#country)
 - [currencyConverter](data.md#currencyconverter)
 - [currencyList](data.md#currencylist)

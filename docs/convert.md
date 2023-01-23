@@ -591,5 +591,3 @@ https://apyhub.com/utility/converter-doc-pdf
 #### Returns
 
   The data for the output file as slice of byte or Url as a string.
-  
-___

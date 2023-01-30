@@ -1,0 +1,39 @@
+Data Extractor,search-fuzzy-text,Apy Search : Fuzzy Text
+Smart Generation,generator-ical,Apy Generation : iCal
+Standard Data,data-info-country,Apy Data : Country
+Standard Data,data-lists-country,Apy Dictionary : Countries
+Standard Data,data-lists-currency,Apy Dictionary : Currencies
+Standard Data,data-lists-timezone,Apy Dictionary : Timezones
+File Conversion,converter-doc-pdf,Apy Convert : Word to PDF
+File Conversion,converter-presentation-pdf,Apy Convert : Presentations to PDF
+File Conversion,converter-spreadsheet-pdf,Apy Convert : Spreadsheets to PDF
+File Conversion,converter-image-pdf,Apy Convert : Images to PDF
+File Conversion,converter-html-pdf,Apy Convert : HTML to PDF
+Smart Generation,generate-file-archive,Apy Generate: File Archive
+File Security,generate-secure-file-archive,Apy Generate: Secure File Archive
+Smart Generation,generate-secure-file-archive,Apy Generate: Secure File Archive
+E-commerce Quick Tools,generate-qr-code,Apy Generate: QR Code
+Smart Generation,generate-qr-code,Apy Generate: QR Code
+E-commerce Quick Tools,generate-bar-code,Apy Generate: Barcode
+Smart Generation,generate-bar-code,Apy Generate: Barcode
+Smart Generation,generate-html-pdf,Apy Generate : HTML Content to PDF
+Smart Generation,generate-url-pdf,Apy Generate : Webpage to PDF
+Data Validation,data-postcodes-uk,Apy Validate : UK Postcodes
+Standard Data,data-postcodes-uk,Apy Validate : UK Postcodes
+Image Processor,image-processor-resize,Apy Image Processor : Resize
+File Manipulation,image-processor-resize,Apy Image Processor : Resize
+Image Processor,image-processor-thumbnail,Apy Generate : Thumbnails
+Smart Generation,image-processor-thumbnail,Apy Generate : Thumbnails
+E-commerce Quick Tools,image-processor-thumbnail,Apy Generate : Thumbnails
+File Manipulation,image-processor-thumbnail,Apy Generate : Thumbnails
+Image Processor,image-processor-crop,Apy Image Processor : Crop
+File Manipulation,image-processor-crop,Apy Image Processor : Crop
+Image Processor,image-processor-watermark,Apy Image Processor : Watermark
+File Security,image-processor-watermark,Apy Image Processor : Watermark
+File Manipulation,image-processor-watermark,Apy Image Processor : Watermark
+Image Processor,image-processor-compress,Apy Image Processor : Compress
+File Manipulation,image-processor-compress,Apy Image Processor : Compress
+Image Processor,image-processor-extract-metadata,Apy Extract : Image Metadata
+Data Extractor,image-processor-extract-metadata,Apy Extract : Image Metadata
+File Conversion,converter-csv-excel,Apy Convert : CSV to Excel
+File Conversion,converter-md-html,Apy Convert : Markdown to HTML

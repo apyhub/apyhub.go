@@ -12,8 +12,16 @@ import (
 )
 
 // Set the token
-func InitApyHub(token string) {
-	h.Token = token
+func InitApyHub(auth interface{}) error {
+	switch auth := auth.(type) {
+	case string:
+		h.Token = auth
+	case h.BasicAuth:
+		h.Auth = h.BasicAuth(auth)
+	default:
+		return h.ErrTypeNotMatch
+	}
+	return nil
 }
 
 // File convertion

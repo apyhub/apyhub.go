@@ -57,8 +57,30 @@ import (
    apyhub "github.com/apyhub/apyhub.go"
 )
 
-apyhub.InitApyHub("YOUR_APY_TOKEN")
+err:=apyhub.InitApyHub("YOUR_APY_TOKEN")
+if err!=nil {
+   log.Fatal(err)
+}
 ```
+#### Basic Authorization
+
+```go
+import(
+   apyhub "github.com/apyhub/apyhub.go"
+   h "github.com/apyhub/apyhub.go/helper"
+)
+
+BasicAuth := h.BasicAuth{
+   Username: "username",
+   Password: "password",
+}
+    
+err:=apyhub.InitApyHub(BasicAuth)
+if err!=nil {
+   log.Fatal(err)
+}
+```
+
 
 ## **Example**
 

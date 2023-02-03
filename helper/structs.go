@@ -9,6 +9,11 @@ type Response struct {
 	Data string `json:"data"`
 }
 
+type BasicAuth struct {
+	Username string
+	Password string
+}
+
 type WatermarkRequest struct {
 	ImageUrl     string
 	WatermarkUrl string

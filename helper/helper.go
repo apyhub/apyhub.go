@@ -12,6 +12,8 @@ var ContentType = func(contentType string) (string, string) { return "Content-Ty
 
 var Token string
 
+var Auth BasicAuth
+
 // Create Form File
 func CallApyhubFromFile(key string, url string, input io.Reader, filename string) ([]byte, error) {
 	body, writer, err := prepareBody(key, input, filename)

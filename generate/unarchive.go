@@ -1,8 +1,9 @@
 package generate
 
 import (
-	h "apyhub/helper"
 	"fmt"
+
+	h "github.com/apyhub/apyhub.go/helper"
 )
 
 func Unarchive(conv h.Unzip) ([]string, error) {

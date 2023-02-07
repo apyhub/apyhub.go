@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/apyhub/apyhub.go"
+	apyhub "github.com/apyhub/apyhub.go"
 	h "github.com/apyhub/apyhub.go/helper"
 )
 

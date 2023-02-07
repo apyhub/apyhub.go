@@ -16,7 +16,7 @@ var Auth BasicAuth
 
 // Create Form File
 func CallApyhubFromFile(key string, url string, input io.Reader, filename string) ([]byte, error) {
-	body, writer, err := prepareBody(key, input, filename)
+	body, writer, err := PrepareBody(key, input, filename)
 	if err != nil {
 		return nil, err
 	}
@@ -35,7 +35,6 @@ func CallApyhub(method string, url string, body io.Reader, s ...string) ([]byte,
 	if err != nil {
 		return nil, err
 	}
-
 	if Token == "" {
 		return nil, ErrTokenNotSet
 	}
@@ -46,7 +45,6 @@ func CallApyhub(method string, url string, body io.Reader, s ...string) ([]byte,
 	} else {
 		req.Header.Add(ContentType(s[0]))
 	}
-
 	resp, err := Client.Do(req)
 	if err != nil {
 		return nil, err
@@ -67,7 +65,7 @@ func CallApyhub(method string, url string, body io.Reader, s ...string) ([]byte,
 	return byt, nil
 }
 
-func prepareBody(key string, input io.Reader, filename string) (*bytes.Buffer, *multipart.Writer, error) {
+func PrepareBody(key string, input io.Reader, filename string) (*bytes.Buffer, *multipart.Writer, error) {
 	body := new(bytes.Buffer)
 	writer := multipart.NewWriter(body)
 	part, err := writer.CreateFormFile(key, filename)

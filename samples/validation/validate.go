@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/apyhub/apyhub.go"
+	apyhub "github.com/apyhub/apyhub.go"
 	"github.com/apyhub/apyhub.go/validation"
 )
 

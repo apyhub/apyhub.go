@@ -8,6 +8,21 @@ import (
 )
 
 func prepareAPI(obj interface{}, method string, url string, IsURl bool) (byt []byte, err error) {
+	byt, err = callApyhub(obj, method, url)
+	if err != nil {
+		return nil, err
+	}
+	if IsURl {
+		var respJsn h.Response
+		if err = json.Unmarshal(byt, &respJsn); err != nil {
+			return nil, err
+		}
+		return []byte(respJsn.Data), nil
+	}
+	return
+}
+
+func callApyhub(obj interface{}, method string, url string) (byt []byte, err error) {
 	jsnbyt, err := json.Marshal(obj)
 	if err != nil {
 		return nil, err
@@ -16,13 +31,18 @@ func prepareAPI(obj interface{}, method string, url string, IsURl bool) (byt []b
 	if err != nil {
 		return nil, err
 	}
-	if IsURl {
-		var respJsn h.Response
-		err = json.Unmarshal(byt, &respJsn)
-		if err != nil {
-			return nil, err
-		}
-		byt = []byte(respJsn.Data)
-	}
+
 	return
+}
+
+func prepareAPIUnZip(obj interface{}, method string, url string) (byt []string, err error) {
+	jsnByt, err := callApyhub(obj, method, url)
+	if err != nil {
+		return nil, err
+	}
+	var respUnZipJsn h.UnZipResponse
+	if err = json.Unmarshal(jsnByt, &respUnZipJsn); err != nil {
+		return nil, err
+	}
+	return respUnZipJsn.Data, nil
 }

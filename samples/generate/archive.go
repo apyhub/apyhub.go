@@ -5,25 +5,23 @@ import (
 	"log"
 	"os"
 
-	"github.com/apyhub/apyhub.go"
-	h "github.com/apyhub/apyhub.go/helper"
+	apyhub "github.com/apyhub/apyhub.go"
 )
 
 func init() {
-	apyhub.InitApyHub("APT0rzEvAp76Izffo3ek7Zg7FpkK6csxzJ5puXCwWAw3lg0cFtj")
+	apyhub.InitApyHub("Enter apyhub token")
 }
 
 func Archive() {
 
-	// file archive without protection
-	zip := h.Zip{
-		Urls: []string{
-			"https://assets.apyhub.com/samples/sample.jpg",
-			"https://assets.apyhub.com/samples/sample.docx",
-			"https://assets.apyhub.com/samples/sample.pdf",
-		},
+	// file archive without protection As a files or file urls output as file.
+	Urls := []string{
+		"https://assets.apyhub.com/samples/sample.jpg",
+		"https://assets.apyhub.com/samples/sample.docx",
+		"https://assets.apyhub.com/samples/sample.pdf",
 	}
-	byt, err := apyhub.ArchiveAsFile(zip)
+
+	byt, err := apyhub.ArchiveAsFile(Urls)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,22 +31,21 @@ func Archive() {
 		log.Fatal(err)
 	}
 
-	url, err := apyhub.ArchiveAsURL(zip)
+	// file archive without protection As a files or file urls output return as a url.
+	url, err := apyhub.ArchiveAsURL(Urls)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println(url)
 
-	// file archive with protection
-	secureZip := h.ZipSecure{
-		Urls: []string{
-			"https://assets.apyhub.com/samples/sample.jpg",
-			"https://assets.apyhub.com/samples/sample.docx",
-			"https://assets.apyhub.com/samples/sample.pdf",
-		},
-		Password: "apyhub",
+	// file archive with protection As a files or file urls output return as a file.
+	Urls = []string{
+		"https://assets.apyhub.com/samples/sample.jpg",
+		"https://assets.apyhub.com/samples/sample.docx",
+		"https://assets.apyhub.com/samples/sample.pdf",
 	}
-	byt, err = apyhub.SecureArchiveFile(secureZip)
+
+	byt, err = apyhub.SecureArchiveFile("apyhub", Urls)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -58,9 +55,31 @@ func Archive() {
 		log.Fatal(err)
 	}
 
-	url, err = apyhub.SecureArchiveAsURL(secureZip)
+	// file archive with protection As a files or file urls output return as a url.
+	url, err = apyhub.SecureArchiveAsURL("password", Urls)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println(url)
+}
+
+func Unarchive() {
+
+	//file unarchive without protection As file or url and output return as slice of urls
+	File, err := os.Open("./test_file/testziplink.zip.")
+	if err != nil {
+		log.Fatal(err)
+	}
+	output, err := apyhub.UnArchiveAsURL(File)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(output)
+
+	//file unarchive with protection As file or url and output return as slice of urls
+	output, err = apyhub.SecureUnArchiveAsURL("some-secure-password", "https://assets.apyhub.com/samples/secure-archive.zip")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(output)
 }

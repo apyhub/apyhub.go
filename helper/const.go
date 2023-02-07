@@ -112,11 +112,21 @@ const (
 	ScreenshotWebpageAsFile = "https://api.apyhub.com/generate/screenshot/webpage/image-file"
 	ScreenshotWebpageAsURL  = "https://api.apyhub.com/generate/screenshot/webpage/image-url"
 
-	ArchiveAsFile     = "https://api.apyhub.com/generate/archive/file-urls/archive-file"
-	ArchiveAsURL      = "https://api.apyhub.com/generate/archive/file-urls/archive-url"
-	SecureArchiveFile = "https://api.apyhub.com/generate/secure-archive/file-urls/archive-file"
-	SecureArchiveURL  = "https://api.apyhub.com/generate/secure-archive/file-urls/archive-url"
-
 	IcalAsFile = "https://api.apyhub.com/generate/ical/file"
 	IcalAsURL  = "https://api.apyhub.com/generate/ical/url"
+
+	ArchiveURLToFile  = "https://api.apyhub.com/generate/archive/file-urls/archive-file"
+	ArchiveFileToFile = "https://api.apyhub.com/generate/archive/files/archive-file"
+	ArchiveFileToURL  = "https://api.apyhub.com/generate/archive/files/archive-url"
+	ArchiveURLToURL   = "https://api.apyhub.com/generate/archive/file-urls/archive-url"
+
+	SecureArchiveURLToFile  = "https://api.apyhub.com/generate/secure-archive/file-urls/archive-file"
+	SecureArchiveFileToFile = "https://api.apyhub.com/generate/secure-archive/files/archive-file"
+	SecureArchiveURLToURL   = "https://api.apyhub.com/generate/secure-archive/file-urls/archive-url"
+	SecureArchiveFileToURL  = "https://api.apyhub.com/generate/secure-archive/files/archive-url"
+
+	UnArchiveAsURLToURL      = "https://api.apyhub.com/extract/archive/url/file-urls"
+	UnArchiveFileToURL       = "https://api.apyhub.com/extract/archive/file/file-urls"
+	SecureUnArchiveURLToURL  = "https://api.apyhub.com/extract/secure-archive/url/file-urls"
+	SecureUnArchiveFileToURL = "https://api.apyhub.com/extract/secure-archive/file/file-urls"
 )

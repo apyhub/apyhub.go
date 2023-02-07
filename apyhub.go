@@ -209,20 +209,30 @@ func IcalGeneratorAsURL(calendar h.CalenderEvent) (string, error) {
 	return generate.IcalGeneratorAsURL(calendar)
 }
 
-func ArchiveAsFile(conv h.Zip) ([]byte, error) {
+// Archiver and secure archiver
+func ArchiveAsFile(conv ...interface{}) ([]byte, error) {
 	return generate.ArchiveAsFile(conv)
 }
 
-func ArchiveAsURL(conv h.Zip) (string, error) {
+func ArchiveAsURL(conv ...interface{}) (string, error) {
 	return generate.ArchiveAsURL(conv)
 }
 
-func SecureArchiveFile(conv h.ZipSecure) ([]byte, error) {
-	return generate.SecureArchiveFile(conv)
+func SecureArchiveFile(password string, conv ...interface{}) ([]byte, error) {
+	return generate.SecureArchiveFile(password, conv)
 }
 
-func SecureArchiveAsURL(conv h.ZipSecure) (string, error) {
-	return generate.SecureArchiveAsURL(conv)
+func SecureArchiveAsURL(password string, conv ...interface{}) (string, error) {
+	return generate.SecureArchiveAsURL(password, conv)
+}
+
+// unarchiver
+func UnArchiveAsURL(conv interface{}) ([]string, error) {
+	return generate.UnArchiveAsURL(conv)
+}
+
+func SecureUnArchiveAsURL(password string, conv interface{}) ([]string, error) {
+	return generate.SecureUnArchiveAsURL(password, conv)
 }
 
 // image processing

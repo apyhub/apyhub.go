@@ -12,7 +12,9 @@ var (
 	ErrInvalidFormat       = errors.New("format of file submitted is invalid")
 	ErrNotSameType         = errors.New("image and watermark is not same type")
 	ErrUnableToGetCurrency = errors.New("unable to get currency")
-	ErrTokenNotSet         = errors.New("Authentication required")
+	ErrTokenNotSet         = errors.New("authentication required")
+	ErrNoArgs              = errors.New("url or file required")
+	ErrMixedType           = errors.New("mixed type can't be allowed")
 )
 
 func errMessage(body io.ReadCloser) ([]byte, error) {

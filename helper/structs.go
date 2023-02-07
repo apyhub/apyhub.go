@@ -1,17 +1,18 @@
 package helper
 
 // commons request and response structure
+
+type BasicAuth struct {
+	Username string
+	Password string
+}
+
 type Request struct {
 	Url string `json:"url"`
 }
 
 type Response struct {
 	Data string `json:"data"`
-}
-
-type BasicAuth struct {
-	Username string
-	Password string
 }
 
 type WatermarkRequest struct {
@@ -147,13 +148,27 @@ type Reccurent struct {
 	Count     int    `json:"count"`
 }
 
+type Zip struct {
+	Urls []string `json:"urls"`
+}
+
 type ZipSecure struct {
 	Urls     []string `json:"urls"`
 	Password string   `json:"password"`
 }
 
-type Zip struct {
-	Urls []string `json:"urls"`
+type UnZip struct {
+	Url string `json:"url"`
+}
+
+type SecureUnZip struct {
+	Url string `json:"url"`
+	Password string `json:"password"`
+
+}
+
+type UnZipResponse struct {
+	Data []string `json:"data"`
 }
 
 type ContentRequest struct {

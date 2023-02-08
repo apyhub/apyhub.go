@@ -117,6 +117,15 @@ func FuzzySearch(source string, target string, unicodeNormalize bool) ([]string,
 	return search.FuzzySearch(source, target, unicodeNormalize)
 }
 
+// unarchiver
+func UnArchiveAsURL(conv interface{}) ([]string, error) {
+	return extract.UnArchiveAsURL(conv)
+}
+
+func SecureUnArchiveAsURL(password string, conv interface{}) ([]string, error) {
+	return extract.SecureUnArchiveAsURL(password, conv)
+}
+
 // Data getting Information
 func Country(countrycode string) (h.Country, error) {
 	return data.Country(countrycode)
@@ -224,15 +233,6 @@ func SecureArchiveFile(password string, conv ...interface{}) ([]byte, error) {
 
 func SecureArchiveAsURL(password string, conv ...interface{}) (string, error) {
 	return generate.SecureArchiveAsURL(password, conv)
-}
-
-// unarchiver
-func UnArchiveAsURL(conv interface{}) ([]string, error) {
-	return generate.UnArchiveAsURL(conv)
-}
-
-func SecureUnArchiveAsURL(password string, conv interface{}) ([]string, error) {
-	return generate.SecureUnArchiveAsURL(password, conv)
 }
 
 // image processing

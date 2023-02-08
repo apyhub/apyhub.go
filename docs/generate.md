@@ -19,107 +19,277 @@
 
 ### archive
 
-Creates an archive file (zip) from a list of URLs.
+Creates an unsecure archive file (zip) from a list of Files or URLs.
 
-**`Example of Unsecure File-archiver`**
-
-```go
-import (
-   apyhub "github.com/apyhub/apyhub.go"
-   h      "github.com/apyhub/helper"
-)
-
-zip:= h.Zip{
-        Urls: []string{
-          "any file url",
-          "any file url",
-          "any file url"
-        }
-      }
-
-// It return the file bytes
-byt, err := a.ArchiveAsFile(zip)
-```
+**`Example 1: unsecure file-archiver a local files`**
 
 ```go
 import (
    apyhub "github.com/apyhub/apyhub.go"
-   h      "github.com/apyhub/helper"
 )
 
-zip:= h.Zip{
-        Urls: []string{
-          "any file url",
-          "any file url",
-          "any file url"
-        }
-      }
-      
-// It's return file presigned url. It's valid for 15 mins.
-url, err := a.ArchiveAsURL(zip)
-```
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
 
-**`Example of Secure File-archiver`**
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+//Input as a many files. It return the file bytes
+byt, err := apyhub.ArchiveAsFile(File,File1)
+
+```
+**`Example 2: unsecure file-archiver a local file as a slice of io.Reader`**
+
+```go
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+//Input as slice of io.reader as a file and it's return the file bytes
+files := []io.Reader{File, File1}
+
+byt, err = apyhub.ArchiveAsFile(files)
+```
+**`Example 3: unsecure file-archiver a file urls`**
+```go 
+//Input as a many file urls. It return the file bytes
+
+firstFileUrl:="any file url"
+secondFileUrl:="any file url"
+
+byt, err = apyhub.ArchiveAsFile(firstFileUrl,secondFileUrl)
+```
+**`Example 4: unsecure file-archiver a file urls as a slice of urls`**
+
+```go
+//Input as slice of urls as a file. It return the file bytes
+urls := []string{"any file url", "any file url"}
+
+byt, err = apyhub.ArchiveAsFile(urls)
+```
+#### Defined in
+
+[generate/archive.go:12](https://github.com/apyhub/apyhub.go/blob/main/generate/archive.go#L12)
+
+**`Example 5: unsecure file-archiver a local files and return AWS presigned url`**
 
 ```go
 import (
    apyhub "github.com/apyhub/apyhub.go"
-   h      "github.com/apyhub/helper"
 )
 
-securedzip:= h.ZipSecure{
-    Urls: []string{
-            "any file url",
-            "any file url",
-            "any file url"
-      },
-    Password: "password",
-  }
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
 
-byt, err := a.SecureArchiveFile(securedzip)
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+//Input as slice of io.reader as a file and It return the Presigned url
+url, err := apyhub.ArchiveAsURL(File,File1)
+
 ```
+**`Example 6: unsecure file-archiver a local files as a slice of io.Reader and return AWS presigned url`**
 
 ```go
-import (
-   apyhub "github.com/apyhub/apyhub.go"
-   h      "github.com/apyhub/helper"
-)
 
-securedzip:= h.ZipSecure{
-    Urls: []string{
-            "any file url",
-            "any file url",
-            "any file url"
-      },
-    Password: "password",
-  }
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
 
-url, err := a.SecureArchiveAsURL(securedzip)
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+////Input as slice of io.reader and It return the Presigned url
+files := []io.Reader{File, File1}
+
+url, err := apyhub.ArchiveAsURL(files)
+
 ```
+
+**`Example 7: unsecure file-archiver a file urls and return AWS presigned url`**
+```go 
+//Input as a many file urls. It return the Presigned url
+
+firstFileUrl:="any file url"
+secondFileUrl:="any file url"
+
+url, err = apyhub.ArchiveAsURL(firstFileUrl,secondFileUrl)
+```
+**`Example 8: unsecure file-archiver a file urls as a slice of urls and return AWS presigned url`**
+
+```go
+//Input as slice of urls as a file. It return the Presigned url
+urls := []string{"any file url", "any file url"}
+
+url, err = apyhub.ArchiveAsURL(urls)
+```
+#### Defined in
+[generate/archive.go:27](https://github.com/apyhub/apyhub.go/blob/main/generate/archive.go#L27)
 
 **`Link`**
 
 https://apyhub.com/utility/generate-file-archive
 
+
+Creates an secure archive file (zip) from a list of Files or URLs.
+
+
+**`Example 1: Secure file-archiver a local files`**
+
+```go
+import (
+   apyhub "github.com/apyhub/apyhub.go"
+)
+
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+//Input as a many files. It return the file bytes
+byt, err := apyhub.SecureArchiveFile("password",File,File1)
+```
+**`Example 2: secure file-archiver a local file as a slice of io.Reader`**
+
+```go
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+//Input as slice of io.reader as a file and it's return the Secure file bytes
+files := []io.Reader{File, File1}
+
+byt, err = apyhub.SecureArchiveFile("password",files)
+```
+
+**`Example 3: secure file-archiver a file urls`**
+```go 
+//Input as a many file urls. It return the file bytes
+
+firstFileUrl:="any file url"
+secondFileUrl:="any file url"
+
+byt, err = apyhub.SecureArchiveFile("password",firstFileUrl,secondFileUrl)
+```
+
+**`Example 4: secure file-archiver a file urls as a slice of urls`**
+
+```go
+//Input as slice of urls as a file. It return the file bytes
+urls := []string{"any file url", "any file url"}
+
+byt, err = apyhub.SecureArchiveFile("password",urls)
+```
+#### Defined in
+[generate/archive.go:55](https://github.com/apyhub/apyhub.go/blob/main/generate/archive.go#L55)
+
+**`Example 5: secure file-archiver a local files and return AWS presigned url`**
+
+```go
+import (
+   apyhub "github.com/apyhub/apyhub.go"
+)
+
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+//Input as slice of io.reader as a file and It return the Presigned url
+url, err := apyhub.SecureArchiveAsURL("password",File,File1)
+
+```
+
+**`Example 6: secure file-archiver a local files as a slice of io.Reader and return AWS presigned url`**
+
+```go
+
+File, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+File1, err := os.Open("any file")
+if err != nil {
+    log.Fatal(err)
+}
+
+////Input as slice of io.reader and It return the Presigned url
+files := []io.Reader{File, File1}
+
+url, err := apyhub.SecureArchiveAsURL("password",files)
+
+```
+**`Example 7: secure file-archiver a file urls and return AWS presigned url`**
+```go 
+//Input as a many file urls. It return the Presigned url
+
+firstFileUrl:="any file url"
+secondFileUrl:="any file url"
+
+url, err = apyhub.SecureArchiveAsURL("password",firstFileUrl,secondFileUrl)
+```
+**`Example 8: secure file-archiver a file urls as a slice of urls and return AWS presigned url`**
+
+```go
+//Input as slice of urls as a file. It return the Presigned url
+urls := []string{"any file url", "any file url"}
+
+url, err = apyhub.SecureArchiveAsURL("password",urls)
+```
+#### Defined in
+[generate/archive.go:71](https://github.com/apyhub/apyhub.go/blob/main/generate/archive.go#L71)
+
 **`Link`**
 
 https://apyhub.com/utility/generate-secure-file-archive
+
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | []`string` | The list of files or URLs to archive. |
-| `output` | `[]byte | string` | The desired file name for the output archive. |
-| `password` | `string` | The password to use for secure archiving. |
+| `input` | `files | urls` | The list of files or URLs to archive. |
+| `output` | `[]byte | string` | Format for the response |
+| `password` | `string` | The password to use for secure archiving and unarchiving. |
 
 #### Returns
 
 - The data for the output file as a slice of byte or Url as a string.
 
-#### Defined in
-
-[generate/archive.go:11](https://github.com/apyhub/apyhub.go/blob/main/generate/archive.go#L11)
 
 ___
 

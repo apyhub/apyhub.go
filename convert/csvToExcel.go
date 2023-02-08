@@ -3,50 +3,10 @@ package convert
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
-	"go/build"
 	"io"
-	"log"
-	"os"
 
 	h "github.com/apyhub/apyhub.go/helper"
-	"github.com/princjef/gomarkdoc"
-	"github.com/princjef/gomarkdoc/lang"
-	"github.com/princjef/gomarkdoc/logger"
 )
-
-func Md() {
-	// Create a renderer to output data
-	out, err := gomarkdoc.NewRenderer()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// wd, err := filepath.Abs(filepath.Dir(os.Args[0]))
-	wd, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println("wd:", wd)
-	buildPkg, err := build.ImportDir(wd, build.ImportComment)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// Create a documentation package from the build representation of our
-	// package.
-	logmd := logger.New(logger.DebugLevel)
-	pkg, err := lang.NewPackageFromBuild(logmd, buildPkg)
-	if err != nil {
-		log.Fatal(err)
-	}
-	file, _ := os.Create("read1.md")
-
-	mdstring, _ := out.Package(pkg)
-	file.WriteString(mdstring)
-	// Write the documentation out to console.
-	fmt.Println()
-}
 
 // Convert Csv to Excel
 // Output As a File

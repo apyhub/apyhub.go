@@ -10,6 +10,8 @@
 - [textFromPdf](extract.md#textfrompdf)
 - [textFromWebpage](extract.md#textfromwebpage)
 - [textFromWord](extract.md#textfromword)
+- [unarchive](generate.md#unarchive)
+
 
 ## Functions
 
@@ -189,3 +191,84 @@ A output returns to the text for the Word document.
 #### Defined in
 
 [extract/textFromWord.go:11](https://github.com/apyhub/apyhub.go/blob/main/extract/textFromWord.go#L11)
+
+
+### unarchive
+
+Unarchive a unsecure zip file or fileurl and return as list of url 
+
+**`Example 1: unsecure file-unarchiver a zip file and return as list of AWS presigned url`**
+
+```go
+import (
+   apyhub "github.com/apyhub/apyhub.go"
+)
+
+File, err := os.Open("unsecure zip file")
+if err != nil {
+    log.Fatal(err)
+}
+
+sliceStr, err := apyhub.UnArchiveAsURL(File)
+```
+**`Example 2: unsecure file-unarchiver a zip file url and return as list of AWS presigned url`**
+
+```go
+
+zipUrl:="unsecure zip file url"
+
+sliceStr, err := apyhub.UnArchiveAsURL(zipUrl)
+
+```
+#### Defined in
+[extract/unarchive.go:11](https://github.com/apyhub/apyhub.go/blob/main/generate/archive.go#L11)
+
+
+**`Link`**
+
+https://apyhub.com/utility/extract-file-unarchive
+
+
+Unarchive a secure zip file or fileurl and return as list of url 
+
+**`Example 3: secure file-unarchiver a zip file and return as list of AWS presigned url`**
+
+```go
+import (
+   apyhub "github.com/apyhub/apyhub.go"
+)
+
+File, err := os.Open("secure zip file")
+if err != nil {
+    log.Fatal(err)
+}
+
+sliceStr, err := apyhub.SecureUnArchiveAsURL("password",File)
+```
+**`Example 4: secure file-unarchiver a zip file url and return as list of AWS presigned url`**
+
+```go
+
+zipUrl:="secure zip file url"
+
+sliceStr, err := apyhub.SecureUnArchiveAsURL("password",zipUrl)
+
+```
+#### Defined in
+[generate/archive.go:36](https://github.com/apyhub/apyhub.go/blob/main/generate/archive.go#L36)
+
+**`Link`**
+
+https://apyhub.com/utility/extract-file-secure-unarchive
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `input` | `file | url` | The list of files or URLs to archive. |
+| `output` | `[]string` | Format for the response |
+| `password` | `string` | The password to use for secure unarchiving. |
+
+#### Returns
+
+- The data for the output as a slice of string as presigned Url.

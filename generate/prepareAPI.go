@@ -34,15 +34,3 @@ func callApyhub(obj interface{}, method string, url string) (byt []byte, err err
 
 	return
 }
-
-func prepareAPIUnZip(obj interface{}, method string, url string) (byt []string, err error) {
-	jsnByt, err := callApyhub(obj, method, url)
-	if err != nil {
-		return nil, err
-	}
-	var respUnZipJsn h.UnZipResponse
-	if err = json.Unmarshal(jsnByt, &respUnZipJsn); err != nil {
-		return nil, err
-	}
-	return respUnZipJsn.Data, nil
-}

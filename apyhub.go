@@ -24,11 +24,96 @@ func InitApyHub(auth interface{}) error {
 	return nil
 }
 
-// File convertion
+/*
+##Functions
+
+### csvToExcel
+
+Converts a CSV file or URL to an Excel file.
+
+**`Example 1 : convert csv file to Excel file`**
+
+```go
+
+	import (
+		apyhub "github.com/apyhub/apyhub.go"
+	)
+
+	File,err :=os.Open("any csv file")
+	if err!=nil {
+		log.Fatal(err)
+	}
+
+	// Input is a file
+	byt,err :=apyhub.CsvToExcelAsFile(File)
+
+```
+
+**`Example 2 : convert csv file url to Excel file`**
+
+```go
+
+	fileUrl :="csv file url"
+
+	// Input is a url
+	byt,err :=apyhub.CsvToExcelAsFile(fileUrl)
+
+```
+
+#### Defined in
+
+[convert/csvToExcel.go:63](https://github.com/apyhub/apyhub.go/blob/main/convert/csvToExcel.go#L63)
+*/
 func CsvToExcelAsFile(urlorFile interface{}) ([]byte, error) {
 	return convert.CsvToExcelAsFile(urlorFile)
 }
 
+/*
+**`Example 3 : convert csv file to AWS presigned url`**
+
+```go
+
+	// Input is a file
+	File,err :=os.Open("any csv file")
+	if err!=nil {
+		log.Fatal(err)
+	}
+
+	url,err :=apyhub.CsvToExcelAsUrl(File)
+
+```
+
+**`Example 4 : convert csv file url to AWS presigned url`**
+
+```go
+
+	fileUrl :="csv file url"
+
+	// Input is a url
+	url,err :=apyhub.CsvToExcelAsUrl(fileUrl)
+
+```
+
+#### Defined in
+
+[convert/csvToExcel.go:38](https://github.com/apyhub/apyhub.go/blob/main/convert/csvToExcel.go#L38)
+
+**`Link`**
+
+https://apyhub.com/utility/converter-csv-excel
+
+#### Parameters
+
+<table>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+<tr><td>input</td><td> <code>"string"</code> | <code>Buffer</code></td><td>The html  file or URL.</td></tr>
+<tr><td>output</td><td><code>[]byte</code> | <code>"string"</code> </td><td>The format for the response.</td></tr>
+</table>
+
+#### Returns
+
+The data for the output file as slice of byte or Url as a string.
+*/
 func CsvToExcelAsUrl(urlorFile interface{}) (string, error) {
 	return convert.CsvToExcelAsURL(urlorFile)
 }
@@ -41,6 +126,44 @@ func HtmlToPdfAsUrl(urlorFile interface{}, landscape bool) (string, error) {
 	return convert.HtmlToPdfAsUrl(urlorFile, landscape)
 }
 
+/*
+### imageToPdf
+
+Converts a image file or URL to an pdf file.
+
+**`Example 1 : convert image to pdf file`**
+
+```go
+
+	import (
+	apyhub "github.com/apyhub/apyhub.go"
+	)
+
+	// Input is a file
+	File,err :=os.Open("any image")
+	if err!=nil {
+		log.Fatal(err)
+	}
+
+	byt,err :=apyhub.ImageToPdfAsFile(File)
+
+```
+
+**`Example 2 : convert image url to pdf file`**
+
+```go
+
+	// Input is a url
+	fileUrl :="image url"
+
+	byt,err :=apyhub.ImageToPdfAsFile(fileUrl)
+
+```
+
+#### Defined in
+
+[convert/imageToPdf.go:12](https://github.com/apyhub/apyhub.go/blob/main/convert/imageToPdf.go#L12)
+*/
 func ImageToPdfAsFile(urlorFile interface{}, landscape bool) ([]byte, error) {
 	return convert.ImageToPdfAsFile(urlorFile, landscape)
 }
